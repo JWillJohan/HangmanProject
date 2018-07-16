@@ -1,0 +1,349 @@
+; HANGMAN
+; CS2810-001
+; DUE 4/26/2018
+; TEAM MEMBERS:
+; DALLEN BALDWIN
+; JAMES JOHANSON
+; CHRISTOPHER DRAKE
+; MILES BRIDGER
+; BRANDON ADAMS
+
+	.ORIG x3000
+
+	LEA	R0, PROMPT	; Load message
+	PUTS			; Print message
+INPUT	AND	R0, R0, #0	; Clear R0
+	IN			; Input
+	ST	R0, CHOSENNUM	; Save input into CHOSENNUM
+	LD	R3, ASCII
+
+
+;-------------------- Check if 0 ------------------------------
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD0F		; CHOSENNUM = 0
+
+	AND	R0, R0, #0
+	LD	R0, WORD0
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 1 ------------------------------
+WORD0F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD1F		; CHOSENNUM = 1
+
+	AND	R0, R0, #0
+	LD	R0, WORD1
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 2 ------------------------------
+WORD1F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD2F		; CHOSENNUM = 2
+
+	AND	R0, R0, #0
+	LD	R0, WORD2
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 3 ------------------------------
+WORD2F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD3F		; CHOSENNUM = 3
+
+	AND	R0, R0, #0
+	LD	R0, WORD3
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 4 ------------------------------
+WORD3F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD4F		; CHOSENNUM = 4
+
+	AND	R0, R0, #0
+	LD	R0, WORD4
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 5 ------------------------------
+WORD4F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD5F		; CHOSENNUM = 5
+
+	AND	R0, R0, #0
+	LD	R0, WORD5
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 6 ------------------------------
+WORD5F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD6F		; CHOSENNUM = 6
+
+	AND	R0, R0, #0
+	LD	R0, WORD6
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 7 ------------------------------
+WORD6F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD7F		; CHOSENNUM = 7
+
+	AND	R0, R0, #0
+	LD	R0, WORD7
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 8 ------------------------------
+WORD7F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD8F		; CHOSENNUM = 8
+
+	AND	R0, R0, #0
+	LD	R0, WORD8
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;-------------------- Check if 9 ------------------------------
+WORD8F	ADD	R3, R3, #1	; Add 0
+	LD	R0, CHOSENNUM   ; Load CHOSENNUM into R0
+	NOT	R0, R0		; Turn input negative
+	ADD	R0, R0, #1	; Add one
+	ADD	R0, R3, R0	; Subtract R3 with R0
+	BRnp	WORD9F		; CHOSENNUM = 9
+
+	AND	R0, R0, #0
+	LD	R0, WORD9
+	ST	R0, CHOSENWORD	; Save CHOSENWORD
+	BRnzp ENDPROMPT		; Go to ENDPROMPT
+
+;------User didnt input a number between 0 and 9
+WORD9F	AND	R0, R0, #0	; Clear R3
+	LEA	R0, PROMPT2	; Load message
+	PUTS
+	BRnzp	INPUT
+
+ENDPROMPT LEA	R0, PROMPT1	; Load message
+	PUTS			; Print message
+	LD	R3, CHOSENWORD	; Puts Chosen Word in R3, for future use
+
+CHOSENNUM 
+	.FILL x0000
+CHOSENWORD 
+	.FILL x0000	 	;Declare Chosen Word
+WORD0	.FILL x6000
+WORD1	.FILL x600A
+WORD2	.FILL x6014
+WORD3	.FILL x601E
+WORD4	.FILL x6028
+WORD5	.FILL x6032
+WORD6	.FILL x603C
+WORD7	.FILL x6046
+WORD8	.FILL x6050
+WORD9	.FILL x605A
+ASCII	.FILL	x0030
+PROMPT	.STRINGZ " Welcome to Hangman. The point of the game is to guess a word correctly.\n If you guess wrong 5 times you lose.\n Start by typing in a number between 0 and 9 to choose one of the random words. \n"
+PROMPT1 .STRINGZ "Your word has been chosen, Good Luck!"
+PROMPT2 .STRINGZ "Please type in a number between 0 and 9"
+
+;-------------------- CHECKINPUT ------------------------------
+
+	AND	R5, R5, #0	;create the tries remaining counter
+	ADD	R5, R5, #5
+	ST	R3, SaveR3
+	BRnzp	CHECKIN	
+
+TRYAGAIN
+	LEA	R0, WRONGPROMPT
+	PUTS
+
+WRONGPROMPT	.STRINGZ "\nIncorrect. Try again."
+
+CHECKIN LEA 	R0, CHARPROMT
+	PUTS
+	LD	R3, SaveR3
+	ST	R5, COUNTER
+COUNTER
+	.FILL x0000
+
+GETCHAR		; get's character from user, input is echoed. letter is saved
+	IN
+	ST 	R0, LETTER
+
+VALIDATE	; check's to see if input is uppercase letter	
+	LD	R1, ASCIIA
+	ADD	R1, R0, R1 ; see if letter's ascii is less than A (65)
+	BRn	FAIL
+	LD 	R2, ASCIIZ
+	ADD	R2, R0, R2 ; see if letter's ascii is greater than Z (90)
+	BRp	FAIL
+	BR	CHECKCHAR
+FAIL
+	LEA	R0, ERRORMESS
+	PUTS
+	BR	GETCHAR
+
+CHECKCHAR	; finds first occurance of character in a string. Returns 1 if true, 0 if false
+	LD	R0, LETTER
+	LDR	R1, R3, #0
+TESTEOT
+	ADD	R4, R1, #-4
+	BRnz	NOMATCH
+	NOT	R1, R1
+	ADD	R1, R1, R0
+	NOT	R1, R1
+	BRnp	NEXTCHAR
+	BR	MATCH
+NEXTCHAR
+	ADD	R3, R3, #1
+	LDR	R1, R3, #0
+	BR	TESTEOT
+MATCH
+	LD	R6, FLAG
+	AND	R6, R6, #0
+	ADD	R6, R6, #1
+	ST	R6, FLAG
+	BRnzp	Replace
+NOMATCH
+	LD	R6, FLAG
+	AND	R6, R6, #0
+	NOT 	R6, R6
+	ST	R6, FLAG
+TRYHARD
+	LD	R5, COUNTER
+	ADD	R5, R5, #-1	;decrement the tries remaining
+	BRz	LOSE
+	BRnzp	TRYAGAIN
+
+; constants, strings, variables
+ASCIIA	.FILL xFFBF
+ASCIIZ  .FILL xFFA6
+SaveR3	.BLKW 1
+FLAG 	.FILL x0000 ; will tell us if the letter passed or not
+LETTER 	.FILL x0000 ; where our letter will be stored
+CHARPROMT
+	.STRINGZ "\n\nPlease enter a capital letter."
+ERRORMESS
+	.STRINGZ "\nError: Please enter a capital letter."
+
+;-------------------- LETTERREPLACE ------------------------------
+
+;This program assumes R0 contains the value of the letter being tested
+;It also assumes that R5 contains the counter of tries (not in ASCII)
+;And R3 holds the address of chosen word
+
+Replace		
+	AND	R1, R1, #0
+	ADD	R1, R1, #9			;initialize "counter of nine"
+	LD	R3, SaveR3
+	LDR	R2, R3, #0			;loads the character
+	LEA	R4, DISPLAY			;loads the address of display word in R4
+	LDR	R6, R4, #0			;loads the value of R4 into R5
+		
+UntilEnd	
+	ADD	R1, R1, #-1		;decrements the pointer
+	BRn	Finish			;until the word is finished
+
+	NOT	R2, R2
+	ADD	R2, R2, R0		;if match, equals xFFFF
+	NOT	R2, R2			;if match, equals x0000
+	BRnp	Output			;if no match, don't replace letter
+	ADD	R6, R0, #0		;loads the letter in R5
+	STR	R6, R4, #0		;stores that letter in the location
+		
+Output		
+	ADD	R4, R4, #1		;increments the pointer
+	LDR	R6, R4, #0		;loads the new value of R4 into R5
+	ADD	R3, R3, #1		;increments the pointer to chosen word
+	LDR	R2, R3, #0		;loads the next letter in chosen word
+	BRnzp	UntilEnd		;loop back until you're done
+
+Finish		
+	LEA	R0, DISPLAY
+	PUTS
+	LEA	R0, TRIES
+	PUTS
+	LD	R0, ASCIICHAR
+	ADD	R0, R0, R5
+	OUT
+
+ASCIICHAR
+	.FILL	x0030
+TRIES	.STRINGZ	"\nRemaining Tries: "
+DISPLAY	.STRINGZ	"---------"
+
+;-------------------- END ------------------------------
+
+; this program will load a number from memory but rn comes from the variable called counter
+; IF that number is zero print you lose ELSE print out good job you won the game this is done with the brz command
+;   R5 = Address of the counter
+;   R7 = Address of game begining
+;Start of the program
+LOSE
+	ADD R5, R5, #0
+	BRnp ELSE               ;if they arent 0, we go to the else block 
+	LEA R0, TEXT1               ;Loads in R0 Losing message
+	PUTS                    ;Prints to the consloe
+	BRnzp END               ;Breaks from the first branch
+ELSE
+	ADD R1, R1, #9
+	LD  R2, HYPHEN
+	LEA R4, DISPLAY
+	LDR R6, R4, #0
+	BRnzp LOOPY
+
+CHKEND	ADD R4, R4, #1
+	LDR R6, R4, #0
+	ADD R1, R1, #-1		;decrements the pointer
+	BRz WIN			;until the word is finished
+
+LOOPY	NOT R6, R6
+	ADD R6, R6, R2
+	NOT R6, R6		;check for a match and starts over
+	BRnp CHKEND
+	LEA R0, TEXT0
+	PUTS
+	BRnzp CHECKIN
+
+WIN	
+	LEA R0, TEXT2               ;Loads winning message to R0
+	PUTS                    ;Prints out winning message to console
+HYPHEN	.FILL	x002D
+TEXT0	.STRINGZ    "\nGreat! Let's do it again."
+TEXT1   .STRINGZ    "\nYou lose you may want to reconsider your major.\n"   ;Variable named text1 with losing message
+TEXT2   .STRINGZ    "\nCongratulations you won \n"              ;variable named text2 with winning message
+;End of my program
+
+END 
+	HALT
+	.END
